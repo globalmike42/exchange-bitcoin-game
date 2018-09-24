@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+p {
+  font-size: 150%;
+ }
+.img-responsive {
+  width:100%;
+}
+.cash{
+  background-color: aliceblue;
+  border-radius: 10pt;
+  display: block;
+  text-align: center;
+  width: 250px;
+}

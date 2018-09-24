@@ -1,0 +1,26 @@
+<h1 class="text-center"> {{changesService.companys[2].name}} </h1>
+<div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="../../assets/hucksters.png" class="img-responsive">
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <p> КУРС ОБМЕНА </p>
+          </div>
+          <div class="col-md-6" style= "background-color: #c3e6cb">
+            <p>{{buyPrice}}$</p>
+          </div>
+          <div class="col-md-6" style= "background-color: #f5c6cb">
+            <p>{{sellPrice}}$</p>
+          </div>
+          <div class="col-md-6">
+              <p><button class="btn btn-outline-success" (click)="payerService.buy(buyPrice)"> КУПИТЬ </button><p>
+            </div>
+            <div class="col-md-6">
+              <p><button class="btn btn-outline-danger" (click)="payerService.sell(sellPrice)"> ПРОДАТЬ </button><p>
+            </div>
+      </div>
+    </div>
+  </div>

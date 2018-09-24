@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,69 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Правила</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p>Доброго времени суток! Добро пожаловать в мир торговли биткоинами!</p>
+        <p>В меню вы можете найти ваш баланс. Каждые пять секунд с вашего фиатного счёта снимают налог в виде 1000$. Поэтому выгоднее хранить деньги в биткоинах. Если налоги съедят ваши деньги - вы проиграли</p>
+        <p>Существует три обменных пункта криптовалюты, по которым вы можете передвигаться с помощью меню.</p>
+        <p>Ставки обменных пунктов зависят от новостей и настроения вкладчиков, так-как биткоин не привязан к реальным вещам нашего мира.</p>
+        <p>Для просмотра новостей у вас в меню есть Новостная лента. Она генерирует новости раз в 20 секунд, плохие или хорошие.</p>
+        <p>Если новость исходит от определённого пункта обмена, значит пункт является инсайдером. Инсайдер первый реагирует на изменения цен, а остальные компании спустя время резко поднимают или обрушивают ставки до уровня инсайдера.</p>
+        <p>Время инсайдера - отличная возможность сыграть на разнице валют. Однако, вы не можете предугадать, когда остальные компании скорректируют ставки.</p>
+        <p>ИГРА НЕ ПОДДЕРЖИВАЕТ МОБИЛЬНУЮ ВЕРСИЮ, ИГРА ПЕРЕЗАПУСКАЕТСЯ ПРИ ПЕРЕЗАГРУЗКЕ СТРАНИЦЫ БРАУЗЕРОМ</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">"Ничё непонятно, Сань" (с) Нгуен Ханьевич</button>
+    </div>
+  </ng-template>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/rrstd">
+    <img src="../assets/rrstd.png" width="30" height="30" alt="">
+    rrstd.game
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Новостная лента <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/exchange">Биржа</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/miners">Майнеры</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/hucksters">Чёрный рынок</a>
+      </li>
+    </ul>
+    <span class="cash">
+    <span class="nav-item">
+      <p style="display: inline-flex; margin: 7px;">{{payerService.cash}}</p>
+      <img src="../assets/dollar.png" width="30" height="30">
+    </span>
+    <span class="nav-item">
+      <p style="display: inline-flex; margin: 7px;">{{payerService.bitcoin}}</p>
+      <img src="../assets/bitcoin.svg" width="30" height="30" alt="">
+    </span>
+  </span>
+    <span class="nav-item">
+      <button class="btn btn-lg btn-outline-primary" style="margin: 7px;" (click)="open(content)">Правила</button>
+    </span>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<!-- <p style="display: inline-flex; margin: 7px;">{{changesService.realCost}}</p>
+<p style="display: inline-flex; margin: 7px;">{{changesService.companys[0].cost}}</p>
+<p style="display: inline-flex; margin: 7px;">{{changesService.companys[1].cost}}</p>
+<p style="display: inline-flex; margin: 7px;">{{changesService.companys[2].cost}}</p> -->

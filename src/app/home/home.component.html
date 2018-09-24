@@ -1,0 +1,14 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Новость</th>
+        <th>Компания</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let news of allNewsService.lastNewses" class="{{news.trend === 1 ? 'table-success' : 'table-danger'}}">
+        <td>{{news.trend === 1 ? 'Супер новость!' : 'Новость не очень!'}}</td>
+        <td>{{news.company === 3 ? 'Все компании' : changesService.companys[news.company].name }}</td>
+      </tr>
+    </tbody>
+  </table>
